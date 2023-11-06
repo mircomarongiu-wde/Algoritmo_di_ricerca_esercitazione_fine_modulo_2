@@ -101,10 +101,10 @@ function lookForJob(posJob, posGeo) {
 }
 
 function searchJob() {
-  let lavoro = document.getElementById("lavoro").value;
-  let luogo = document.getElementById("luogo").value;
+  let lavoro = document.querySelector("#lavoro").value;
+  let luogo = document.querySelector("#luogo").value;
   let returnObject = lookForJob(lavoro, luogo);
-  let jobsList = document.getElementById("jobsList");
+  let jobsList = document.querySelector("#jobsList");
   jobsList.innerHTML = "";
   if (returnObject.result.length > 0) {
     for (let i = 0; i < returnObject.result.length; i++) {
@@ -118,5 +118,5 @@ function searchJob() {
   }
 }
 
-let searchButton = document.getElementById("searchButton");
+let searchButton = document.querySelector("#searchButton");
 searchButton.addEventListener("click", searchJob);
